@@ -1,0 +1,17 @@
+<h2>Add</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Task</mat-label>
+    <input matInput required [(ngModel)]="assignmentName" name="name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>deadline</mat-label>
+    <input matInput [matDatepicker]="picker" required [(ngModel)]="assignmentDueDate" name="dueDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" type="submit">Add</button>
+</form>

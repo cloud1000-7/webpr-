@@ -1,0 +1,23 @@
+<h2>Edit Assignment</h2>
+
+@if(assignment != undefined) {
+  <div class="container">
+   <h1>{{this.assignment.name}}</h1>
+
+   <form ngForm class="form" #formupdate (submit)="onSaveAssignment(); formupdate.reset(); ">
+      <mat-form-field class="form-fied ">
+        <input matInput [placeholder]="this.assignment.name" [(ngModel)]="this.assignmentName" name="assignment-name">
+      </mat-form-field>
+
+      <mat-form-field class="form-fied ">
+        <input matInput [matDatepicker]="picker" [placeholder]="this.assignment.dueDate.toDateString()" [(ngModel)]="this.dueDate" name="date">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" [disabled]="((!(assignmentName != ''))||(!dueDate))">Save</button>
+    </form>
+
+  </div>
+ }

@@ -1,0 +1,53 @@
+<!-- <app-assignments></app-assignments> -->
+ 
+<!--<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h4>Right Click</h4>
+    <button mat-button ><mat-icon>menu</mat-icon></button>
+    <button mat-button ><mat-icon>home</mat-icon></button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav opened>
+    Start
+  </mat-sidenav>
+  <mat-sidenav-content>
+    end
+  </mat-sidenav-content>
+</mat-sidenav-container>-->
+<mat-toolbar color ="primary">
+  
+  <router-outlet></router-outlet>
+  <mat-toolbar-row>
+    <button mat-button (click)="opened=!opened" >
+      Open Sidenav
+    </button>
+     
+    
+    <h1>
+      <nav><a routerLink="/home">{{title}}</a></nav>
+  
+  </h1>
+  
+    <!--<button mat-button (click)="opened=!opened"><mat-icon>Menu</mat-icon> > </button>-->
+    
+  </mat-toolbar-row>
+</mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side">
+     <mat-list>
+        <mat-slide-toggle color="primary" (change)="login()">Login</mat-slide-toggle>
+   
+        <mat-list-item><a routerLink="/home">Home</a></mat-list-item>
+        <mat-list-item><a routerLink="add">Create Assignment</a></mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+<!-- <app-add-assignment></app-add-assignment> -->
+
+
+

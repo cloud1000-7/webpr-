@@ -1,0 +1,41 @@
+<div class="assignment-detail">
+  <mat-card *ngIf="assignmentTransmis">
+    <mat-card-header>
+      <mat-card-title>{{ assignmentTransmis.name }}</mat-card-title>
+      <mat-card-subtitle>Due date: {{ assignmentTransmis.dueDate | date }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{ assignmentTransmis.submitted ? 'Задание выполнено' : 'Задание не выполнено' }}</p>
+
+      <!-- Кнопка для редактирования задания -->
+      <button mat-raised-button color="accent" (click)="isEdit = true">Edit</button>
+
+      <!-- Показываем поля для редактирования, если isEdit == true -->
+      <div *ngIf="isEdit">
+        <div class="form-group">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Assignment name</mat-label>
+            <input matInput [(ngModel)]="assignmentTransmis.name" placeholder="Введите название задания">
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Date</mat-label>
+            <input matInput [(ngModel)]="assignmentTransmis.dueDate" [matDatepicker]="picker" placeholder="Выберите дату">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" (click)="saveAssignment()">Save</button>
+        <button mat-raised-button color="warn" (click)="cancelEdit()">Cancel</button>
+      </div>
+
+      <!-- Стандартные кнопки (удаление, выполнение) -->
+      <button mat-raised-button color="primary" *ngIf="!assignmentTransmis.submitted" (click)="onAssignmentRendu()">Submit</button>
+      <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+    </mat-card-content>
+  </mat-card>
+</div>

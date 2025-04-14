@@ -1,0 +1,45 @@
+.ajouterBtn button {
+  background: #9252ff;
+  color: black;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+.assignment-title, .assignment-subtext {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  opacity: 1 !important;
+}
+
+.assignment-subtext {
+  color: #333; /* Темно-серый для лучшей читабельности */
+  font-size: 14px;
+  
+}
+button, a {
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover, a:hover {
+  filter: brightness(1.2); /* Легкое осветление при наведении */
+}
+.toggle-switch {
+  background: #ddd;
+  border-radius: 20px;
+}
+body, p, h1, h2, h3, h4, h5, h6, span, div {
+  color: #000000 !important;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+p, span, div {
+  line-height: 0.3; /* Можно 1.8 или даже 2, если нужно больше */
+}
+
+.assignment-content {
+  height: fit-content;
+}
+.assignment-item{
+  height: fit-content;
+ 
+}

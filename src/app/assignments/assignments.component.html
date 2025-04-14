@@ -1,0 +1,32 @@
+<h2 class="title">List of assignments</h2>
+
+<main class="container">
+  <!-- Кнопка добавления -->
+  <div class="ajouterBtn">
+    <a routerLink="/add" routerLinkActive="active">
+      <button mat-flat-button color="accent">Create Assignment</button>
+    </a>
+  </div>
+
+  <!-- Список заданий -->
+  <mat-list class="assignment-list">
+    <mat-list-item *ngFor="let assignment of assignments; trackBy: trackById"
+                   [routerLink]="['/assignment', assignment._id]"
+                   routerLinkActive="active"
+                   class="assignment-item">
+      <div class="assignment-content">
+        <h3>{{ assignment.name }}</h3>
+        <p [ngClass]="assignment.submitted ? 'status-done' : 'status-pending'">
+          <span class="status-icon">
+            {{ assignment.submitted ? '✅' : '❌' }}
+          </span>
+          {{ assignment.submitted ? 'Assignment was submitted' : 'Due: ' + (assignment.dueDate | date) }}
+        </p>
+
+        <button mat-button color="warn" (click)="deleteAssignment(assignment); $event.stopPropagation()">Удалить</button>
+        <button mat-button color="primary" *ngIf="!assignment.submitted" (click)="markAsSubmitted(assignment); $event.stopPropagation()">Отметить как выполненное</button>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</main>

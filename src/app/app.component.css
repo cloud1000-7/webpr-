@@ -1,0 +1,148 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+  }
+  
+  nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #0056b3;
+  }
+  
+  .ajouterBtn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .ajouterBtn button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .ajouterBtn button:hover {
+    background: #218838;
+  }
+  
+  .assignment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .assignment-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .assignment-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .assignment-content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .status-done {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .status-pending {
+    color: #dc3545;
+    font-weight: bold;
+  }
+  
+  mat-slide-toggle {
+    margin-top: 20px;
+    display: block;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .assignment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .assignment-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: rgb(0, 0, 0);
+  }
+  
+  .assignment-content {
+    text-align: center;
+  }
+  mat-sidenav-container{
+    height: calc(205vh - 115vh);
+  }
+  mat-sidenav{
+    width: 200px;
+    background-color: rgb(221, 221, 221);
+  }
+  button{
+    background-color: rgb(255, 0, 0);
+  }
+  mat-toolbar{
+    background-color: #838383;
+  }

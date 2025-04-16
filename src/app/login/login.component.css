@@ -17,4 +17,17 @@
     color: red;
     margin-top: 10px;
   }
+  .login-container {
+    max-width: 300px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-field {
+    width: 100%;
+  }
+  
+  
   

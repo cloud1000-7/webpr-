@@ -1,148 +1,148 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 28px;
-    color: #333;
-    text-align: center;
-  }
-  
-  nav a {
-    text-decoration: none;
-    font-size: 20px;
-    color: #007bff;
-    transition: color 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: #0056b3;
-  }
-  
-  .ajouterBtn {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .ajouterBtn button {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .ajouterBtn button:hover {
-    background: #218838;
-  }
-  
-  .assignment-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .assignment-item {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background: #fff;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .assignment-item:hover {
-    transform: scale(1.02);
-  }
-  
-  .assignment-content h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .status-done {
-    color: #28a745;
-    font-weight: bold;
-  }
-  
-  .status-pending {
-    color: #dc3545;
-    font-weight: bold;
-  }
-  
-  mat-slide-toggle {
-    margin-top: 20px;
-    display: block;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
-  .container {
-    max-width: 700px;
-    width: 100%;
-    margin: 20px auto;
-    padding: 20px;
-  }
-  
-  .assignment-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .assignment-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    background: rgb(0, 0, 0);
-  }
-  
-  .assignment-content {
-    text-align: center;
-  }
-  mat-sidenav-container{
-    height: calc(205vh - 115vh);
-  }
-  mat-sidenav{
-    width: 200px;
-    background-color: rgb(221, 221, 221);
-  }
-  button{
-    background-color: rgb(255, 0, 0);
-  }
-  mat-toolbar{
-    background-color: #838383;
-  }
+/* Статус в правом верхнем углу */
+.status {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.status mat-icon {
+  margin-right: 5px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+/* Форма логина */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 50px auto;
+}
+
+/* Стили для кнопки "Login as Guest" */
+.guest-login {
+  margin-top: 10px;
+}
+
+/* Улучшаем внешний вид кнопок */
+button {
+  margin-top: 20px;
+}
+
+button.mat-raised-button {
+  background-color: #3f51b5;
+  color: white;
+}
+
+button.mat-flat-button {
+  background-color: #f50057;
+  color: white;
+}
+
+button.mat-flat-button:hover {
+  background-color: #d5003c;
+}
+
+/* Стили для mat-sidenav */
+mat-sidenav {
+  background-color: #eeeeee; /* Светлый фон для sidenav */
+  color: #333; /* Темный текст для контраста */
+}
+
+/* Стили для элементов в sidenav */
+mat-list-item a {
+  color: #3f51b5; /* Синий цвет для ссылок */
+  text-decoration: none;
+}
+
+mat-list-item a:hover {
+  text-decoration: underline;
+}
+
+/* Статус в sidenav */
+mat-list-item span {
+  font-weight: bold;
+}
+
+/* Стили для статуса логина в sidenav */
+mat-list-item span {
+  display: block;
+  margin-top: 10px;
+}
+
+mat-sidenav-content {
+  padding: 20px;
+}
+
+/* Стиль для формы, чтобы она была лучше видна */
+.login-form {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Блок с текстом о статусе логина */
+mat-sidenav-content p {
+  font-size: 1.1rem;
+  color: #4caf50; /* Зеленый для позитивного сообщения */
+}
+
+mat-sidenav-content .guest-login {
+  color: #ff9800; /* Оранжевый для гостевого логина */
+}
+
+/* Стили для кнопки "Login as Guest" */
+button.mat-raised-button.guest-login {
+  background-color: #ff9800; /* Оранжевый для гостевого входа */
+  color: white;
+}
+
+button.mat-raised-button.guest-login:hover {
+  background-color: #f57c00; /* Темно-оранжевый при наведении */
+}
+
+/* Общий цвет текста */
+body, mat-sidenav, mat-sidenav-content {
+  color: #000000; /* Чёрный цвет текста */
+}
+
+/* Для ссылок в sidenav */
+mat-list-item a {
+  color: #000000; /* Чёрные ссылки */
+}
+
+mat-list-item a:hover {
+  text-decoration: underline;
+}
+
+/* Статус логина в sidenav */
+mat-list-item span {
+  font-weight: bold;
+}
+
+/* Цвет текста для статуса */
+mat-sidenav-content p {
+  color: #000000; /* Чёрный цвет для текста статуса */
+}
+
+/* Для кнопки "Login as Guest" */
+button.mat-raised-button.guest-login {
+  background-color: #ff9800;
+  color: #000000; /* Чёрный текст на кнопке */
+}
+
+/* Стиль для mat-toolbar */
+mat-toolbar {
+  background-color: #000000; /* Чёрный фон для тулбара */
+}
+
+mat-toolbar a {
+  color: white; /* Белый цвет текста для ссылки */
+}
+
+/* Для всего содержимого mat-toolbar */
+mat-toolbar-row {
+  color: white; /* Белый цвет текста для всего тулбара */
+}

@@ -1,53 +1,57 @@
-<!-- <app-assignments></app-assignments> -->
- 
-<!--<mat-toolbar color="primary">
+<mat-toolbar color="primary">
   <mat-toolbar-row>
-    <h4>Right Click</h4>
-    <button mat-button ><mat-icon>menu</mat-icon></button>
-    <button mat-button ><mat-icon>home</mat-icon></button>
-  </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav opened>
-    Start
-  </mat-sidenav>
-  <mat-sidenav-content>
-    end
-  </mat-sidenav-content>
-</mat-sidenav-container>-->
-<mat-toolbar color ="primary">
-  
-  <router-outlet></router-outlet>
-  <mat-toolbar-row>
-    <button mat-button (click)="opened=!opened" >
-      Open Sidenav
+    <button mat-button (click)="opened = !opened" color="accent">
+      ☰
     </button>
-     
-    
-    <h1>
-      <nav><a routerLink="/home">{{title}}</a></nav>
-  
-  </h1>
-  
-    <!--<button mat-button (click)="opened=!opened"><mat-icon>Menu</mat-icon> > </button>-->
-    
+    <span style="margin-left: 1rem;">
+      <nav><a routerLink="/home" style="text-decoration: none; color: white;">Assignment Management App</a></nav>
+    </span>
+    <div style="padding: 1rem;">
+      <p *ngIf="authService.loggedIn">
+        <span *ngIf="authService.isGuest">You are logged in as Guest</span>
+        <span *ngIf="!authService.isGuest">You are logged in</span>
+      </p>
+    </div>
+    <span class="spacer"></span>
   </mat-toolbar-row>
 </mat-toolbar>
-  <mat-sidenav-container>
-    <mat-sidenav [(opened)]="opened" mode="side">
-     <mat-list>
-        <mat-slide-toggle color="primary" (change)="login()">Login</mat-slide-toggle>
-   
-        <mat-list-item><a routerLink="/home">Home</a></mat-list-item>
-        <mat-list-item><a routerLink="add">Create Assignment</a></mat-list-item>
-      </mat-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
-<!-- <app-add-assignment></app-add-assignment> -->
 
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" mode="side">
+    <mat-list>
+      <mat-list-item><a routerLink="/home">Home</a></mat-list-item>
+      <mat-list-item><a routerLink="add">Create Assignment</a></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <!-- Статус логина, проверка авторизации -->
+        <ng-container *ngIf="authService.loggedIn; else notLoggedIn">
+          <span *ngIf="authService.isGuest; else loggedInMsg">
+            ✅ Logged in as Guest
+          </span>
+          <ng-template #loggedInMsg>
+            ✅ Logged in
+          </ng-template>
+        </ng-container>
+        <ng-template #notLoggedIn>
+          ❌ Not logged in
+        </ng-template>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
 
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
 
+    <!-- Кнопка "Login as Guest" -->
+    <div style="display: flex; justify-content: center; margin-top: 1rem;">
+      <button mat-raised-button 
+              [ngStyle]="{
+                'background-color': authService.isGuest ? 'red' : '#9c27b0', 
+                'color': 'white'
+              }" 
+              (click)="loginAsGuest()">
+        {{ authService.isGuest ? 'Return to Login' : 'Login as Guest' }}
+      </button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
